@@ -1,0 +1,18 @@
+{
+	"rancherApiUrl": "http://rancher.kartoza.com:8080/v2-beta/",
+	"project": "testing.limpopobims.kartoza.com",
+	"commands": [
+		{
+			"service": "migrate",
+			"action": "restart",
+			"options": {}
+		},
+		{
+			"service": "collectstatic",
+			"action": "upgrade",
+			"options": {
+				"image": "docker:kartoza/ledet_uwsgi:latest"
+			}
+		}
+	]
+}

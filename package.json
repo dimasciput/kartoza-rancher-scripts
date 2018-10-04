@@ -1,0 +1,13 @@
+{
+  "name": "kartoza_rancher_script",
+  "version": "1.0.0",
+  "description": "Package for kartoza rancher script",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dimas Ciputra",
+  "license": "ISC",
+  "devDependencies": {
+    "request": "^2.88.0"
+  }
+}

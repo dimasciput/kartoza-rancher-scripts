@@ -136,6 +136,7 @@ function processService(project, service, action, options) {
 	            }
 	            if (body['type'] === 'error') {
 	                console.log('Error : ' + body['code'] + ' ' + service['name']);
+	            	resolve(body);
 	            } else {
 	                console.log('Success : ' + body['state'] + ' ' + service['name']);
 	                if (action === 'upgrade') {
@@ -163,7 +164,9 @@ function finishUpgrade(project, service) {
 	            let state = body['state'];
 	            if (state === 'upgrading') {
 	                console.log('Status : upgrading ' + service['name']);
-	                resolve(finishUpgrade(project, service));
+	                setTimeout(() => {
+	                	resolve(finishUpgrade(project, service));
+	                }, 5000);
 	                return;
 	            } else {
 	            	resolve(body);

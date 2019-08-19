@@ -1,6 +1,6 @@
 {
 	"rancherApiUrl": "http://rancher.kartoza.com:8080/v2-beta/",
-	"project": "testing.limpopobims.kartoza.com",
+	"project": "testing.healthyrivers.kartoza.com",
 	"commands": [
 		{
 			"service": "migrate",
@@ -11,7 +11,7 @@
 			"service": "collectstatic",
 			"action": "upgrade",
 			"options": {
-				"image": "docker:kartoza/ledet_uwsgi:latest"
+				"image": "docker:kartoza/freshwaterbiodiversity:latest"
 			}
 		}
 	]

@@ -3,16 +3,29 @@
 	"project": "testing.healthyrivers.kartoza.com",
 	"commands": [
 		{
+			"service": "uwsgi",
+			"action": "upgrade",
+			"options": {}
+		},
+		{
+			"service": "worker",
+			"action": "upgrade",
+			"options": {}
+		},
+		{
 			"service": "migrate",
-			"action": "restart",
+			"action": "upgrade",
 			"options": {}
 		},
 		{
 			"service": "collectstatic",
 			"action": "upgrade",
-			"options": {
-				"image": "docker:kartoza/freshwaterbiodiversity:latest"
-			}
+			"options": {}
+		},
+		{
+			"service": "web",
+			"action": "restart",
+			"options": {}
 		}
 	]
 }

@@ -1,11 +1,23 @@
 const request = require('request');
 const fs = require('fs');
+let accessKey = '';
+let secretKey = '';
 
-// Get keys from secrets.json
-let keysRawData = fs.readFileSync('secrets.json')
-let keysJSON = JSON.parse(keysRawData);
-let accessKey = keysJSON['rancherAccessKey']
-let secretKey = keysJSON['rancherSecretKey']
+// Get keys from environment
+if (process.env.rancherAccessKey) {
+    accessKey = process.env.rancherAccessKey;
+} 
+if (process.env.rancherSecretKey) {
+    secretKey = process.env.rancherSecretKey;
+}
+
+if (!accessKey || !secretKey) {
+   // Get keys from secrets.json
+   let keysRawData = fs.readFileSync('secrets.json')
+   let keysJSON = JSON.parse(keysRawData);
+   accessKey = keysJSON['rancherAccessKey']
+   secretKey = keysJSON['rancherSecretKey']
+}
 
 if (!accessKey || !secretKey) {
     console.log('Missing access/secret key in secrets.json');

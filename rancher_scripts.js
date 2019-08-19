@@ -29,7 +29,7 @@ let commandsRawData = fs.readFileSync('commands.json')
 let commandsData = JSON.parse(commandsRawData);
 let url = commandsData['rancherApiUrl'];
 let projectName = commandsData['project'];
-let auth = 'Basic ' + new Buffer(accessKey+':'+ secretKey).toString('base64');
+let auth = 'Basic ' + new Buffer.from(accessKey+':'+ secretKey).toString('base64');
 let headers = {
     'Authorization' : auth
 };
